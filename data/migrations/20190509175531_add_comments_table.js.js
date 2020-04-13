@@ -3,12 +3,13 @@ exports.up = function(knex) {
     tbl.increments();
 
     tbl.string('text').notNullable();
+    
 
     tbl
       .integer('post_id')
       .unsigned()
       .notNullable()
-      .references('id')
+      .references('post_id')
       .inTable('posts')
       .onDelete('CASCADE')
       .onUpdate('CASCADE');
